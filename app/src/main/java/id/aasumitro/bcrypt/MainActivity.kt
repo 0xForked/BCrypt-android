@@ -12,13 +12,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val hash = BCryptPasswordEncoderImpl(
-            BCryptPasswordEncoderImpl.BCryptVersion.`$2Y`
-        ).encode("secret")
+        val hash = encryptPassword("password")
 
         Log.d("Password Hash", hash)
 
-        if (BCrypt.checkpw("secret", hash)) {
+        if (verifyPassword("password", hash)) {
             Log.d("Password Hash", "It matches")
         } else {
             Log.d("Password Hash", "It does not match")
