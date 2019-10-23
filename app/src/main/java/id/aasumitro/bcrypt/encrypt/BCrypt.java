@@ -1,4 +1,4 @@
-package id.aasumitro.bcrypt;
+package id.aasumitro.bcrypt.encrypt;
 
 // Copyright (c) 2006 Damien Miller <djm@mindrot.org>
 //

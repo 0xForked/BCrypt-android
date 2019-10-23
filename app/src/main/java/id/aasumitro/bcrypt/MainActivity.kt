@@ -3,6 +3,8 @@ package id.aasumitro.bcrypt
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import id.aasumitro.bcrypt.encrypt.BCrypt
+import id.aasumitro.bcrypt.encrypt.BCryptPasswordEncoder
 
 class MainActivity : AppCompatActivity() {
 

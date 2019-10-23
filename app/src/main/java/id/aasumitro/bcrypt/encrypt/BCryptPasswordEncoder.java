@@ -1,4 +1,4 @@
-package id.aasumitro.bcrypt;
+package id.aasumitro.bcrypt.encrypt;
 /*
  * Copyright 2002-2011 the original author or authors.
  *
