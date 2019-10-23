@@ -1,4 +1,4 @@
-package id.aasumitro.bcrypt.encrypt;
+package id.aasumitro.bcrypt.encrypt
 
 /*
  * Copyright 2011-2016 the original author or authors.
@@ -19,17 +19,21 @@ package id.aasumitro.bcrypt.encrypt;
 /**
  * Service interface for encoding passwords.
  *
- * The preferred implementation is {@code BCryptPasswordEncoder}.
+ * The preferred implementation is `BCryptPasswordEncoder`.
  *
  * @author Keith Donald
  */
-public interface PasswordEncoder {
+
+/**
+ * Modified by A. A. Sumitro on 23/10/19.
+ */
+interface PasswordEncoder {
 
     /**
      * Encode the raw password. Generally, a good encoding algorithm applies a SHA-1 or
      * greater hash combined with an 8-byte or greater randomly generated salt.
      */
-    String encode(CharSequence rawPassword);
+    fun encode(rawPassword: CharSequence): String
 
     /**
      * Verify the encoded password obtained from storage matches the submitted raw
@@ -41,7 +45,7 @@ public interface PasswordEncoder {
      * @return true if the raw password, after encoding, matches the encoded password from
      * storage
      */
-    boolean matches(CharSequence rawPassword, String encodedPassword);
+    fun matches(rawPassword: CharSequence, encodedPassword: String): Boolean
 
     /**
      * Returns true if the encoded password should be encoded again for better security,
@@ -50,7 +54,5 @@ public interface PasswordEncoder {
      * @return true if the encoded password should be encoded again for better security,
      * else false.
      */
-    default boolean upgradeEncoding(String encodedPassword) {
-        return false;
-    }
+    fun upgradeEncoding(encodedPassword: String): Boolean = false
 }

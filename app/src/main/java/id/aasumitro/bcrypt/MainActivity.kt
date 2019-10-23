@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import id.aasumitro.bcrypt.encrypt.BCrypt
-import id.aasumitro.bcrypt.encrypt.BCryptPasswordEncoder
+import id.aasumitro.bcrypt.encrypt.BCryptPasswordEncoderImpl
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,8 +12,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val hash = BCryptPasswordEncoder(
-            BCryptPasswordEncoder.BCryptVersion.`$2Y`
+        val hash = BCryptPasswordEncoderImpl(
+            BCryptPasswordEncoderImpl.BCryptVersion.`$2Y`
         ).encode("secret")
 
         Log.d("Password Hash", hash)
